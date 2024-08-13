@@ -1,0 +1,232 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyN6Q81RTqoRKzGxmQ1xuz2J",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/anand78abhi/Artificial-intelligence-4.0/blob/main/beginner\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OjwYzs0nOXYf",
+        "outputId": "351651b5-3184-476b-bb42-468be30251c2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 23, 243, 34, 'abc']\n"
+          ]
+        }
+      ],
+      "source": [
+        "li=[1,23,243,34,'abc']\n",
+        "print(li)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "li=[10,20,30,40,50,60,70,5]\n",
+        "li.append(100)\n",
+        "li.append(200)\n",
+        "print(li)\n",
+        "li.remove(10)\n",
+        "li.remove(30)\n",
+        "print(li)\n",
+        "li.sort()\n",
+        "print(li)\n",
+        "li.reverse()\n",
+        "print(li)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bO9LYCxAQPJa",
+        "outputId": "84d56645-cb52-4ec4-c980-aaafc2fec0fa"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 20, 30, 40, 50, 60, 70, 5, 100, 200]\n",
+            "[20, 40, 50, 60, 70, 5, 100, 200]\n",
+            "[5, 20, 40, 50, 60, 70, 100, 200]\n",
+            "[200, 100, 70, 60, 50, 40, 20, 5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import re\n",
+        "password=input(\"Input your password\")\n",
+        "x=True\n",
+        "while x:\n",
+        "  if(len(password)<6 or len(password)>16):\n",
+        "    break\n",
+        "  elif not re.search(\"[0-9]\",password):\n",
+        "      break\n",
+        "  elif not re.search(\"[a-z]\",password):\n",
+        "      break\n",
+        "  elif not re.search(\"[A-Z]\",password):\n",
+        "        break\n",
+        "  elif not re.search(\"[$#@]\",password):\n",
+        "          break\n",
+        "  else:\n",
+        "            print(\"Valid Password\")\n",
+        "            x=False\n",
+        "            break\n",
+        "if x:\n",
+        "  print(\"Invalid Password\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FjwcKvccUv0T",
+        "outputId": "b0bcfbf4-e8a7-4255-bdd4-5b9f2580d00a"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Input your passworddfhog\n",
+            "Invalid Password\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pay=int(input(\"enter the salary:\"))\n",
+        "#pay=basic salary of the employee in inr\n",
+        "#calculate the gross salary\n",
+        "if pay <= 10000:\n",
+        "  HRA=.2*pay\n",
+        "  DA=.8*pay\n",
+        "  Gross=HRA+DA+pay\n",
+        "  print(\"the gross salary of the employee is \",Gross)\n",
+        "elif pay <=20000:\n",
+        "  HRA=.25*pay\n",
+        "  DA=.9*pay\n",
+        "  Gross=HRA+DA+pay\n",
+        "  print(\"the gross salary of the employee is \",Gross)\n",
+        "else:\n",
+        "  HRA=.3*pay\n",
+        "  DA=.95*pay\n",
+        "  Gross=HRA+DA+pay\n",
+        "  print(\"the gross salary of the employee is \",Gross)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vxUz_BjjZ0RQ",
+        "outputId": "a44d4030-b750-4b8d-efab-2f2405af99b4"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter the salary:25000\n",
+            "the gross salary of the employee is  56250.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "random_number=[random.randint(100,900) for _ in range(100)]\n",
+        "print(random_number)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sFjTikjZclWe",
+        "outputId": "9eead758-7a83-4c48-846b-1cb26b35783d"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[621, 836, 356, 383, 173, 519, 270, 346, 409, 467, 318, 808, 582, 718, 670, 131, 506, 198, 139, 888, 429, 799, 602, 841, 528, 410, 182, 383, 382, 502, 692, 792, 545, 469, 473, 845, 393, 515, 505, 390, 782, 465, 472, 661, 248, 487, 572, 869, 455, 690, 157, 823, 518, 829, 429, 619, 203, 585, 736, 455, 362, 891, 577, 828, 307, 875, 772, 581, 213, 874, 118, 764, 730, 817, 291, 430, 496, 327, 746, 192, 694, 640, 528, 692, 318, 656, 713, 136, 651, 423, 618, 302, 602, 613, 875, 305, 577, 351, 315, 551]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "principal=int(input(\"enter the principal amount \"))\n",
+        "interest_rate=int(input(\"enter the interest rate \"))\n",
+        "time=int(input(\"enter the time period for which the compud interest is to be calculated,in years\"))\n",
+        "amount=principal*(1+(interest_rate/100))**time\n",
+        "compound_interest=amount+principal\n",
+        "print(compound_interest)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VG49A2COeVdX",
+        "outputId": "38bbe2cb-89ac-44c3-f430-b1b9357e1325"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter the principal amount 1200\n",
+            "enter the interest rate 2\n",
+            "enter the time period for which the compud interest is to be calculated,in years2\n",
+            "2448.48\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
